@@ -7,11 +7,10 @@ from aws_cdk import core as cdk
 # the CDK's core module.  The following line also imports it as `core` for use
 # with examples from the CDK Developer's Guide, which are in the process of
 # being updated to use `cdk`.  You may delete this import if you don't need it.
-from aws_cdk import core
 
-from cdk_trainer.cdk_trainer_stack import PipelineStack
+from cdk_trainer.pipeline_stack import PipelineStack
 
-app = core.App()
+app = cdk.App()
 PipelineStack(app, "CdkTrainerPipeeline",
               # If you don't specify 'env', this stack will be environment-agnostic.
               # Account/Region-dependent features and context lookups will not work,
@@ -25,7 +24,7 @@ PipelineStack(app, "CdkTrainerPipeeline",
               # Uncomment the next line if you know exactly what Account and Region you
               # want to deploy the stack to. */
 
-              env=core.Environment(account='750353892954', region='us-west-2'),
+              env=cdk.Environment(account='750353892954', region='us-west-2'),
 
               # For more information, see https://docs.aws.amazon.com/cdk/latest/guide/environments.html
               )

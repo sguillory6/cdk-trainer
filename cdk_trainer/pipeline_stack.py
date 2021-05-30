@@ -4,7 +4,9 @@ from aws_cdk import aws_codepipeline_actions as cpactions
 from aws_cdk import pipelines
 
 from webservice_stage import WebServiceStage
-from .cdk_trainer_stack import CdkTrainerStack
+
+
+# from pipeline_stack import CdkTrainerStack
 
 
 class PipelineStack(core.Stack):
@@ -24,7 +26,8 @@ class PipelineStack(core.Stack):
                                              oauth_token=core.SecretValue.secrets_manager('trainer-github-token'),
                                              owner='sguillory6',  # "GITHUB-OWNER"
                                              repo='cdk-trainer',  # "GITHUB-REPO"
-                                             trigger=cpactions.GitHubTrigger.POLL),
+                                             trigger=cpactions.GitHubTrigger.POLL,
+                                             branch='main'),
 
                                          synth_action=pipelines.SimpleSynthAction(
                                              source_artifact=source_artifact,
