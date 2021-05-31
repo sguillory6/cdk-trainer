@@ -1,7 +1,7 @@
 
-# Welcome to your CDK Python project!
+# CDK-Trainer - A GraphQL API with DynamoDB backend to demonstrate CDK Pipelines
 
-This is a blank project for Python development with CDK.
+This project implements the example from the blog post [CDK Pipelines: Continuous delivery for AWS CDK applications](https://phatrabbitapps.com/cdk-pipelines-continuous-delivery-for-aws-cdk-applications)
 
 The `cdk.json` file tells the CDK Toolkit how to execute your app.
 
